@@ -1,0 +1,48 @@
+import smtplib
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
+import random
+
+
+codigoo = random.randint(100000, 999999)
+password = "khxqwlwstfmbxxcj"
+me = "carreramatias1707@gmail.com"
+you = input("Ingrese su email  >>>")
+
+email_boady = f"""
+            <html><boady><p>Hola,gracias por registrarte.  \n Su codigo de verificacion es {codigoo}</p></boady></html> 
+            """
+
+message = MIMEMultipart("alternative", None, [MIMEText(email_boady, "html")])
+message["subject"] = "CODIGO DE VERIFICACION "
+message["from"] = me
+message["to"] = you
+
+try:
+    server = smtplib.SMTP("smtp.gmail.com:587")
+    server.ehlo()
+    server.starttls()
+    server.login(me, password)
+    server.sendmail(me, you, message.as_string())
+    server.quit()
+    Verificacion = int(input("Ingrese el codigo de verificacion que le ha llegado "))
+    if Verificacion == codigoo:
+        print("Se ha verificado correctamente")
+
+        try:
+            usuario = input("Ingrese su usuario")
+            contraseña = input("Ingrese su contraseña ")
+            print("Se ha creado su usuario satifacoriamente")
+
+
+        except ValueError:
+            print("No se ha podido crear su usuario, ingrese el usuario y contraseña sin numeros")
+
+
+except Exception as e:
+    print(f"Error al enviar el email:{e}")
+
+
+
+
+
