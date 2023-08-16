@@ -115,3 +115,4 @@ while True:
             continue
     except ValueError:
         print("No se toma como valor las letras.")
+L
