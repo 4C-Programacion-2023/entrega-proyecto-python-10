@@ -50,9 +50,14 @@ except Exception as e:
 
 
 
-
+CarritoR=[]
+CarritoA=[]
 Carrito=[]
-
+ListaB=["Despedida Roman","Camiseta Maradona","Camiseta Boca Campeon 2002","Camiseta Boca 2007"]
+ListaR=["Despedida Ponzio","Camiseta Campeon  2018","Camiseta campeon 2015","Camiseta 1990"]
+ListaA=["Campeona Mundial 1978","Campeona Mundial 2022","Camiseta KEMPES","Campeon Copa America 2021","Camiseta Campeona 1986"]
+Listab=["Camiseta de Cruyff","Camiseta Campeon de champions 2015","Camiseta Alternativa Azul"]
+ListaM=["Camiseta Pirlo","Camiseta de 1998","Camiseta Campeon del mundial de clubes 2007 "]
 
 Sumatodo=[]
 
@@ -72,6 +77,7 @@ while True:
                 camisetaf = Camisetasact(talle, equipo, 35)
                 print(camisetaf)
                 Sumatodo.append(35)
+                CarritoA.append(camisetaf)
                 try:
                     Carrito.append(equipo)
                     print("se ha agregado correctamente a su carrito")
@@ -80,7 +86,7 @@ while True:
                 continue
             elif tipo == 2:
                 print(
-                    "Solo poseemos camisetas retro de los siguientes clubes \n Boca \n River \n Independiente \n Barcelona \n Real Marid \n Milan \n Inter ")
+                    "Solo poseemos camisetas retro de los siguientes clubes \n Boca \n River \n Barcelona \n Argentina \n Milan  ")
                 sino = input("Desea continuar? ")
                 while True:
                     if sino == "si":
@@ -91,9 +97,25 @@ while True:
                             print(talle)
                         talle = str(input("Que talle quiere?: "))
                         equipo = str(input("Elije el equipo de su camiseta "))
-                        temporada = int(input("Ingrese el año "))
+                        if equipo == "Boca":
+                            print(f"este es el stock que possemos{ListaB}")
+                            temporada=input("Ingrese la camiseta que desee: ")
+                        if equipo == "River":
+                            print(f"este es el stock que possemos{ListaR}")
+                            temporada=input("Ingrese la camiseta que desee")
+                        if equipo == "Argentina":
+                            print(f"este es el stock que possemos{ListaA}")
+                            temporada=input("Ingrese la camiseta que desee")
+                        if equipo == "Barcelona":
+                            print(f"este es el stock que possemos{Listab}")
+                            temporada = input("Ingrese la camiseta que desee")
+                        if equipo == "Milan":
+                            print(f"este es el stock que possemos{ListaM}")
+                            temporada=input("Ingrese la camiseta que desee")
+
                         Camisetaf = Camisetasret(talle, equipo, temporada, 70)
                         print(Camisetaf)
+                        CarritoR.append(Camisetaf)
                         Carrito.append(equipo)
                         Sumatodo.append(70)
                         break
@@ -108,14 +130,19 @@ while True:
                 print("El Carrito está vacío \n   \n    \n   ")
             else:
                 print(f"Su carrito es el siguiente: {Carrito}")
-                res = input("Desea eliminar alguna camiseta del carrito? (ingrese solo el equipo) ")
+                res = input("Desea eliminar alguna camiseta del carrito?  ")
                 if res == "si":
                     res3 = input("Que tipo de camiseta desea eliminar retro o actual")
-                    res2 = input("que camiseta desea eliminar? ")
-                    Carrito.remove(res2)
+
                     if res3 == "retro":
+                        print(CarritoR)
+                        res2 = input("que camiseta desea eliminar? (solo el equipo) ")
+                        Carrito.remove(res2)
                         Sumatodo.remove(70)
                     elif res3 == "actual":
+                        print(CarritoA)
+                        res2 = input("que camiseta desea eliminar? ")
+                        Carrito.remove(res2)
                         Sumatodo.remove(35)
 
 
@@ -164,7 +191,7 @@ while True:
                                     print("Se ha pagado satifactoriamente")
                                     print(F"DINERO == {Dinerof}")
 
-                                continue
+                                break
                             elif llegar == "no":
                                 break
 
@@ -182,3 +209,4 @@ while True:
 
 
 
+"comentario"

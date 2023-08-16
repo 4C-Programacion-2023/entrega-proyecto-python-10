@@ -13,4 +13,4 @@ def tablaexiste(nombreTabla):
 
 tablaexiste("USUARIOS")
 
-VER COMO INSERTARLE DATOS
+"VER COMO INSERTARLE DATOS"
