@@ -7,7 +7,10 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 import random
 
-l
+
+#verificación mail (email.mime)
+
+
 print("Bienvenido a Mazacamisetas")
 codigoo = random.randint(100000, 999999)
 password = "khxqwlwstfmbxxcj"
@@ -22,6 +25,8 @@ message = MIMEMultipart("alternative", None, [MIMEText(email_boady, "html")])
 message["subject"] = "CODIGO DE VERIFICACION "
 message["from"] = me
 message["to"] = you
+
+#log in / sign up
 
 try:
     server = smtplib.SMTP("smtp.gmail.com:587")
@@ -45,6 +50,9 @@ try:
             CarritoR = []
             CarritoA = []
             Carrito = []
+
+            #listas de camisetas retro
+
             ListaB = ["Despedida Roman", "Camiseta Maradona", "Camiseta Boca Campeon 2002", "Camiseta Boca 2007"]
             ListaR = ["Despedida Ponzio", "Camiseta Campeon  2018", "Camiseta campeon 2015", "Camiseta 1990"]
             ListaA = ["Campeona Mundial 1978", "Campeona Mundial 2022", "Camiseta KEMPES", "Campeon Copa America 2021",
@@ -62,6 +70,9 @@ try:
                     if menu == 1:
                         tipo = int(input("Que tipo de camiseta quiere? \n 1.Actuales \n 2.Retro  \n >>>>  "))
                         if tipo == 1:
+
+                            #compra camisetas actuales
+
                             print("estos son los talles disponbles")
                             talles = ("s", "m", "l", "xl", "xxl")
                             for talle in talles:
@@ -79,6 +90,9 @@ try:
                                 print("no se ha podido agregar correctamente,intente de nuevo")
                             continue
                         elif tipo == 2:
+
+                            # compra camisetas retro
+
                             print(
                                 "Solo poseemos camisetas retro de los siguientes clubes \n Boca \n River \n Barcelona \n Argentina \n Milan  ")
                             sino = input("Desea continuar? ")
@@ -121,6 +135,9 @@ try:
                                     break
                             continue
                     elif menu == 2:
+
+                        #ver carrito
+
                         if Carrito == []:
                             print("El Carrito está vacío \n   \n    \n   ")
                         else:
@@ -145,6 +162,9 @@ try:
                                 continue
 
                     elif menu == 3:
+
+                        #pagar
+
                         if Carrito == []:
                             print("no hay nada disponible para pagar")
                             continue
@@ -161,6 +181,8 @@ try:
 
                             if pagarR == 1:
                                 while True:
+
+                                    #agregar dinero a la billetera
 
                                     if Dinerot == Tpagar:
                                         Dinerof = Dinerot - Tpagar
