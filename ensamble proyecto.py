@@ -272,6 +272,7 @@ try:
                             print("no hay nada disponible para pagar")
                             continue
                         if Carrito != []:
+
                             Dinero = 0
                             print("DINERO == 0")
                             Tpagar = sum(Sumatodo)
@@ -338,8 +339,7 @@ except Exception as e:
 
 
 
-
-
+d
 
 
 
