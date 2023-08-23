@@ -226,7 +226,7 @@ try:
             print("No es correcto el codigo")
             break
 
-
+#a
 
 except Exception as e:
     print(f"Error al enviar el email:{e}")
