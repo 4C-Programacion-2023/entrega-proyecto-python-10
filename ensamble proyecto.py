@@ -7,7 +7,7 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 import random
 
-
+l
 print("Bienvenido a Mazacamisetas")
 codigoo = random.randint(100000, 999999)
 password = "khxqwlwstfmbxxcj"
