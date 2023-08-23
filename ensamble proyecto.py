@@ -141,7 +141,7 @@ while True:
                         Sumatodo.remove(70)
                     elif res3 == "actual":
                         print(CarritoA)
-                        res2 = input("que camiseta desea eliminar? ")
+                        res2 = input("que camiseta desea eliminar? (solo el equipo) ")
                         Carrito.remove(res2)
                         Sumatodo.remove(35)
 
@@ -206,12 +206,4 @@ while True:
     except ValueError:
         print("No se toma como valor las letras.")
 
-"comentario"
-"comentario"
-"comentario"
-"comentario"
-"comentario"
-"comentario"
-"comentario"
-"comentario"
-"comentario"
+
