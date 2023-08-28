@@ -1,4 +1,7 @@
 from main import Camisetasact, Camisetasret
+from tkinter import*
+import tkinter as tk
+from tkinter import filedialog
 
 
 
@@ -8,7 +11,9 @@ from email.mime.text import MIMEText
 import random
 
 
+
 #verificación mail (email.mime)
+
 
 
 print("Bienvenido a Mazacamisetas")
@@ -51,12 +56,11 @@ try:
             CarritoA = []
             Carrito = []
 
-            #listas de camisetas retro
+            # listas de camisetas retro
 
             ListaB = ["Despedida Roman", "Camiseta Maradona", "Camiseta Boca Campeon 2002", "Camiseta Boca 2007"]
-            ListaR = ["Despedida Ponzio", "Camiseta Campeon  2018", "Camiseta campeon 2015", "Camiseta 1990"]
-            ListaA = ["Campeona Mundial 1978", "Campeona Mundial 2022", "Camiseta KEMPES", "Campeon Copa America 2021",
-                      "Camiseta Campeona 1986"]
+            ListaR = ["Despedida Ponzio", "Camiseta Campeon  2018", "Camiseta 1990"]
+            ListaA = ["Campeona Mundial 1978", "Campeona Mundial 2022",  "Campeon Copa America 2021"]
             Listab = ["Camiseta de Cruyff", "Camiseta Campeon de champions 2015", "Camiseta Alternativa Azul"]
             ListaM = ["Camiseta Pirlo", "Camiseta de 1998", "Camiseta Campeon del mundial de clubes 2007 "]
 
@@ -71,7 +75,7 @@ try:
                         tipo = int(input("Que tipo de camiseta quiere? \n 1.Actuales \n 2.Retro  \n >>>>  "))
                         if tipo == 1:
 
-                            #compra camisetas actuales
+                            # compra camisetas actuales
 
                             print("estos son los talles disponbles")
                             talles = ("s", "m", "l", "xl", "xxl")
@@ -95,9 +99,10 @@ try:
 
                             print(
                                 "Solo poseemos camisetas retro de los siguientes clubes \n Boca \n River \n Barcelona \n Argentina \n Milan  ")
-                            sino = input("Desea continuar? ")
+                            sino = input("Desea continuar? (si o no) ")
+                            sinoo=sino.lower()
                             while True:
-                                if sino == "si":
+                                if sinoo == "si":
 
                                     print("estos son los talles disponbles")
                                     talles = ("s", "m", "l", "xl", "xxl")
@@ -105,30 +110,128 @@ try:
                                         print(talle)
                                     talle = str(input("Que talle quiere?: "))
                                     equipo = str(input(
-                                        "Elije el equipo de su camiseta \n 1.Boca \n 2.River \n 3.Barcelona \n 4.Argentina \n 5.Milan "))
+                                        "Elije el equipo de su camiseta \n 1.Boca \n 2.River \n 3.Barcelona \n 4.Argentina \n 5.Milan  "))
                                     if equipo == 1:
+                                        window = Tk()
+                                        window.title("BOCA JUNIORS RETRO")
+                                        window.geometry("1800x400")
+                                        window.configure(bg="white")
+                                        image = tk.PhotoImage(file='./imagenes/2002.png')
+                                        lb1 = tk.Label(window, image=image)
+                                        lb1.place(x=-5, y=0)
+
+                                        image2 = tk.PhotoImage(file='./imagenes/2007.png')
+                                        lb5 = tk.Label(window, image=image2)
+                                        lb5.place(x=345, y=0)
+
+                                        image3 = tk.PhotoImage(file='./imagenes/maradona.png')
+                                        lb2 = tk.Label(window, image=image3)
+                                        lb2.place(x=575, y=-5)
+
+                                        image4 = tk.PhotoImage(file='./imagenes/Droman.png')
+                                        lb3 = tk.Label(window, image=image4)
+                                        lb3.place(x=1000, y=0)
+
+                                        window.mainloop()
                                         print(f"este es el stock que possemos{ListaB}")
                                         temporada = input("Ingrese la camiseta que desee: ")
                                     if equipo == 2:
+                                        window = Tk()
+                                        window.title("BOCA JUNIORS RETRO")
+                                        window.geometry("1800x400")
+
+                                        window.configure(bg="grey")
+
+                                        image2 = tk.PhotoImage(file='./imagenes/ponzio.png')
+                                        lb5 = tk.Label(window, image=image2)
+                                        lb5.place(x=0, y=0)
+
+                                        image3 = tk.PhotoImage(file='./imagenes/2018.png')
+                                        lb2 = tk.Label(window, image=image3)
+                                        lb2.place(x=450, y=-5)
+
+                                        image4 = tk.PhotoImage(file='./imagenes/1998.png')
+                                        lb3 = tk.Label(window, image=image4)
+                                        lb3.place(x=1000, y=0)
+
+                                        window.mainloop()
+
                                         print(f"este es el stock que possemos{ListaR}")
                                         temporada = input("Ingrese la camiseta que desee")
                                     if equipo == 4:
+                                        from tkinter import *
+                                        import tkinter as tk
+                                        from tkinter import filedialog
+
+                                        window = Tk()
+                                        window.title("ARGENTINA RETRO")
+                                        window.geometry("620x250")
+                                        window.configure(bg="white")
+
+                                        image = tk.PhotoImage(file='./imagenes/1978.png')
+                                        lb5 = tk.Label(window, image=image)
+                                        lb5.place(x=0, y=0)
+
+                                        image2 = tk.PhotoImage(file='./imagenes/2021.png')
+                                        lb5 = tk.Label(window, image=image2)
+                                        lb5.place(x=230, y=0)
+
+                                        image3 = tk.PhotoImage(file='./imagenes/2022.png')
+                                        lb2 = tk.Label(window, image=image3)
+                                        lb2.place(x=420, y=-3)
+
+                                        window.mainloop()
                                         print(f"este es el stock que possemos{ListaA}")
                                         temporada = input("Ingrese la camiseta que desee")
                                     if equipo == 3:
+                                        window = Tk()
+                                        window.title("BARCELONA RETRO")
+                                        window.geometry("1000x500")
+                                        window.configure(bg="white")
+
+                                        image = tk.PhotoImage(file='./imagenes/2015 (barca).png')
+                                        lb5 = tk.Label(window, image=image)
+                                        lb5.place(x=0, y=0)
+
+                                        image2 = tk.PhotoImage(file='./imagenes/maradona (barca).png')
+                                        lb5 = tk.Label(window, image=image2)
+                                        lb5.place(x=500, y=0)
+
+                                        image3 = tk.PhotoImage(file='./imagenes/Alternativa.png')
+                                        lb2 = tk.Label(window, image=image3)
+                                        lb2.place(x=700, y=-3)
+
+                                        window.mainloop()
                                         print(f"este es el stock que possemos{Listab}")
                                         temporada = input("Ingrese la camiseta que desee")
                                     if equipo == 5:
+                                        window = Tk()
+                                        window.title("MILAN RETRO")
+                                        window.geometry("670x220")
+                                        window.configure(bg="white")
+
+                                        image = tk.PhotoImage(file='./imagenes/2007 M.png')
+                                        lb5 = tk.Label(window, image=image)
+                                        lb5.place(x=0, y=0)
+
+                                        image2 = tk.PhotoImage(file='./imagenes/Pirlo.png')
+                                        lb5 = tk.Label(window, image=image2)
+                                        lb5.place(x=250, y=0)
+
+                                        image3 = tk.PhotoImage(file='./imagenes/1998 (milan).png')
+                                        lb2 = tk.Label(window, image=image3)
+                                        lb2.place(x=450, y=-3)
+
                                         print(f"este es el stock que possemos{ListaM}")
                                         temporada = input("Ingrese la camiseta que desee")
-
+                                        window.mainloop()
                                     Camisetaf = Camisetasret(talle, equipo, temporada, 70)
                                     print(Camisetaf)
                                     CarritoR.append(Camisetaf)
                                     Carrito.append(equipo)
                                     Sumatodo.append(70)
                                     break
-                                elif sino == "no":
+                                elif sinoo == "no":
                                     break
                                 else:
                                     print("No se reconoce esa respuesta ingrese si o no")
@@ -136,7 +239,7 @@ try:
                             continue
                     elif menu == 2:
 
-                        #ver carrito
+                        # ver carrito
 
                         if Carrito == []:
                             print("El Carrito está vacío \n   \n    \n   ")
@@ -163,12 +266,13 @@ try:
 
                     elif menu == 3:
 
-                        #pagar
+                        # pagar
 
                         if Carrito == []:
                             print("no hay nada disponible para pagar")
                             continue
                         if Carrito != []:
+
                             Dinero = 0
                             print("DINERO == 0")
                             Tpagar = sum(Sumatodo)
@@ -182,7 +286,7 @@ try:
                             if pagarR == 1:
                                 while True:
 
-                                    #agregar dinero a la billetera
+                                    # agregar dinero a la billetera
 
                                     if Dinerot == Tpagar:
                                         Dinerof = Dinerot - Tpagar
@@ -226,7 +330,7 @@ try:
             print("No es correcto el codigo")
             break
 
-#a
+
 
 except Exception as e:
     print(f"Error al enviar el email:{e}")
@@ -235,8 +339,7 @@ except Exception as e:
 
 
 
-
-
+d
 
 
 

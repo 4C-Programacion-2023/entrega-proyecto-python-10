@@ -21,7 +21,3 @@ class Camisetasret:
         return f"talle: {self.talle}, equipo: {self.equipo},temporada: {self.temporada}.Su precio es de {self.precio}usd"
 
 
-
-
-
-
