@@ -99,7 +99,7 @@ try:
 
                             print(
                                 "Solo poseemos camisetas retro de los siguientes clubes \n Boca \n River \n Barcelona \n Argentina \n Milan  ")
-                            sino = input("Desea continuar? (si o no) ")
+                            sino = input("Desea continuar? (si o no) \n >>>  ")
                             sinoo=sino.lower()
                             while True:
                                 if sinoo == "si":
@@ -134,10 +134,10 @@ try:
 
                                         window.mainloop()
                                         print(f"este es el stock que possemos{ListaB}")
-                                        temporada = input("Ingrese la camiseta que desee: ")
+                                        temporada = input("Ingrese la camiseta que desee \n >>> ")
                                     if equipo == 2:
                                         window = Tk()
-                                        window.title("BOCA JUNIORS RETRO")
+                                        window.title("River RETRO")
                                         window.geometry("1800x400")
 
                                         window.configure(bg="grey")
@@ -157,7 +157,7 @@ try:
                                         window.mainloop()
 
                                         print(f"este es el stock que possemos{ListaR}")
-                                        temporada = input("Ingrese la camiseta que desee")
+                                        temporada = input("Ingrese la camiseta que desee \n >>> ")
                                     if equipo == 4:
                                         from tkinter import *
                                         import tkinter as tk
@@ -182,7 +182,7 @@ try:
 
                                         window.mainloop()
                                         print(f"este es el stock que possemos{ListaA}")
-                                        temporada = input("Ingrese la camiseta que desee")
+                                        temporada = input("Ingrese la camiseta que desee \n >>> ")
                                     if equipo == 3:
                                         window = Tk()
                                         window.title("BARCELONA RETRO")
@@ -203,7 +203,7 @@ try:
 
                                         window.mainloop()
                                         print(f"este es el stock que possemos{Listab}")
-                                        temporada = input("Ingrese la camiseta que desee")
+                                        temporada = input("Ingrese la camiseta que desee \n >>> ")
                                     if equipo == 5:
                                         window = Tk()
                                         window.title("MILAN RETRO")
@@ -223,7 +223,7 @@ try:
                                         lb2.place(x=450, y=-3)
 
                                         print(f"este es el stock que possemos{ListaM}")
-                                        temporada = input("Ingrese la camiseta que desee")
+                                        temporada = input("Ingrese la camiseta que desee \n >>> ")
                                         window.mainloop()
                                     Camisetaf = Camisetasret(talle, equipo, temporada, 70)
                                     print(Camisetaf)
@@ -234,7 +234,7 @@ try:
                                 elif sinoo == "no":
                                     break
                                 else:
-                                    print("No se reconoce esa respuesta ingrese si o no")
+                                    print("No se reconoce esa respuesta ingrese si o no \n >>> ")
                                     break
                             continue
                     elif menu == 2:
@@ -242,21 +242,21 @@ try:
                         # ver carrito
 
                         if Carrito == []:
-                            print("El Carrito está vacío \n   \n    \n   ")
+                            print("El Carrito está vacío \n \n \n ")
                         else:
                             print(f"Su carrito es el siguiente: {Carrito}")
                             res = input("Desea eliminar alguna camiseta del carrito?  ")
                             if res == "si":
-                                res3 = int(input("Que tipo de camiseta desea eliminar \n 1.retro \n 2.actual"))
+                                res3 = int(input("Que tipo de camiseta desea eliminar \n 1.retro \n 2.actual \n >>> "))
 
                                 if res3 == 1:
                                     print(CarritoR)
-                                    res2 = input("que camiseta desea eliminar? (solo el equipo) ")
+                                    res2 = input("que camiseta desea eliminar? (solo el equipo)  \n >>> ")
                                     Carrito.remove(res2)
                                     Sumatodo.remove(70)
                                 elif res3 == 2:
                                     print(CarritoA)
-                                    res2 = input("que camiseta desea eliminar? (solo el equipo) ")
+                                    res2 = input("que camiseta desea eliminar? (solo el equipo)  \n >>> ")
                                     Carrito.remove(res2)
                                     Sumatodo.remove(35)
 
@@ -277,11 +277,11 @@ try:
                             print("DINERO == 0")
                             Tpagar = sum(Sumatodo)
                             print(f"La suma total de lo que tiene que pagar: {Tpagar}")
-                            Ingrese = int(input("ingrese la cantidad de dinero para pagar"))
+                            Ingrese = int(input("ingrese la cantidad de dinero para pagar \n >>> "))
                             Dinerot = Dinero + Ingrese
                             print("DINERO ACTUALIZADO")
                             print(f"DINERO == {Dinerot}")
-                            pagarR = input("Desea pagar \n  1.si \n 2.no? ")
+                            pagarR = input("Desea pagar \n 1.si \n 2.no? \n >>>  ")
 
                             if pagarR == 1:
                                 while True:
@@ -292,25 +292,30 @@ try:
                                         Dinerof = Dinerot - Tpagar
                                         print("Se ha pagado satifactoriamente")
                                         print(F"DINERO == {Dinerof}")
+                                        Carrito.clear()
                                     elif Dinerot >= Tpagar:
                                         Dinerof = Dinerot - Tpagar
                                         print("Se ha pagado satifactoriamente")
                                         print(F"DINERO == {Dinerof}")
+                                        Carrito.clear()
 
-                                    elif Dinerot <= Tpagar:
+
+                                    elif Dinerot < Tpagar:
                                         print("no se puede pagar, No hay suficiente dinero")
-                                        llegar = input("Desea agregar dinero \n 1.si \n 2.no")
+                                        llegar = input("Desea agregar dinero \n 1.si \n 2.no \n >>> ")
                                         if llegar == 1:
-                                            Ingrese = int(input("ingrese la cantidad de dinero para pagar"))
+                                            Ingrese = int(input("ingrese la cantidad de dinero para pagar \n >>> "))
                                             Dinerot = Dinero + Ingrese
                                             if Dinerot == Tpagar:
                                                 Dinerof = Dinerot - Tpagar
                                                 print("Se ha pagado satifactoriamente")
                                                 print(F"DINERO == {Dinerof}")
+                                                Carrito.clear()
                                             elif Dinerot >= Tpagar:
                                                 Dinerof = Dinerot - Tpagar
                                                 print("Se ha pagado satifactoriamente")
                                                 print(F"DINERO == {Dinerof}")
+                                                Carrito.clear()
 
                                             break
                                         elif llegar == 2:
@@ -339,7 +344,7 @@ except Exception as e:
 
 
 
-d
+
 
 
 
