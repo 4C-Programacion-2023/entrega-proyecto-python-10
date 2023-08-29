@@ -292,12 +292,14 @@ try:
                                         Dinerof = Dinerot - Tpagar
                                         print("Se ha pagado satifactoriamente")
                                         print(F"DINERO == {Dinerof}")
+                                        Tpagar = 0
                                         Carrito.clear()
                                     elif Dinerot >= Tpagar:
                                         Dinerof = Dinerot - Tpagar
                                         print("Se ha pagado satifactoriamente")
                                         print(F"DINERO == {Dinerof}")
                                         Carrito.clear()
+                                        Tpagar = 0
 
 
                                     elif Dinerot < Tpagar:
@@ -311,11 +313,14 @@ try:
                                                 print("Se ha pagado satifactoriamente")
                                                 print(F"DINERO == {Dinerof}")
                                                 Carrito.clear()
+                                                Tpagar = 0
+
                                             elif Dinerot >= Tpagar:
                                                 Dinerof = Dinerot - Tpagar
                                                 print("Se ha pagado satifactoriamente")
                                                 print(F"DINERO == {Dinerof}")
                                                 Carrito.clear()
+                                                Tpagar = 0
 
                                             break
                                         elif llegar == 2:
